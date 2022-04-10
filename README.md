@@ -1,19 +1,8 @@
-# cakeshop
 
-## Project setup
-```
-npm install
-```
+# Practica VueJS
+Practica perteneciente a la semana 5 del curso de Innovaccion Virtual - Launch X
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Creacion de la pasteleria con VueJS/VUEX
+Se utilizo VueJS para recrear la aplicación de la semana 1 del modelado de una pasteleria, en esta practica se puso a prueba todos los conocimientos obtenidos a lo largo de las 5 semanas posteriores.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [URL de la pagina desplegada](https://christiansanginez.github.io/PracticaVueJS/)
