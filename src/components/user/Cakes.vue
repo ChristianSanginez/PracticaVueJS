@@ -1,0 +1,240 @@
+
+<template>
+	<section>
+		<div class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="@/assets/images/cakes/cake01.jpg" class="d-flex w-100 image-cake" alt="First Cake">
+					<div class="carousel-caption d-md-block">
+						<h1 class="title"> Types Of Cakes </h1>
+						<h2 class="input"> What Are Our Flavors? </h2>
+						<p class="label"> All this are our flavors cakes, you can decide against a long variety of the best flavors divided in six categories: Fluffy, Butter, Meringue, Oil, Fermented and Custard </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="container-fluid" :class="cake.background" v-for="cake of $store.getters.getCakes" :key="cake.id">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="subtitle"> {{ cake.type }} </h2>
+				</div>
+			</div>
+			<div class="div row">
+				<caption class="caption-text"> List of Flavors </caption>
+				<div class="col">
+					<div class="table-responsive">
+						<table class="table caption-top align-middle">
+							<thead>
+								<tr class="th-text">
+									<th scope="col"> Picture </th>
+									<th scope="col"> Flavor </th>
+									<th scope="col"> Price </th>
+									<th scope="col"> Stock </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="options td-text" v-for="feature of cake.features" :key="feature.id">
+									<td scope="row"> <img class="image" :src="feature.img"> </td>
+									<td> {{ feature.flavor }} </td>
+									<td> ${{ feature.price }}.00 </td>
+									<td> {{ feature.stock }} </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+<script>
+	export default {
+		name: 'Cakes'
+	}
+</script>
+
+<style scoped>
+
+	.image-cake {
+		filter: brightness(40%);
+		background: #000;
+	}
+
+	section.container-fluid {
+		margin: 30px 0;
+		padding: 5px;
+	}
+
+	div .container {
+		margin: 5px auto;
+		padding: 5px;
+	}
+
+	div .row {
+		margin: 5px;
+		padding: 5px;
+	}
+
+	div .col {
+		margin: 5px;
+		padding: 5px;
+	}
+
+	.purple-panel {
+		background: rgb(243, 232, 243);
+	}
+
+	.red-panel {
+		background: rgb(255, 245, 245);
+	}
+
+	.blue-panel {
+		background: rgb(245, 245, 255);
+	}
+
+	.yellow-panel {
+		background: rgb(255, 255, 215);
+	}
+
+	.green-panel {
+		background: rgb(225, 255, 225);
+	}
+
+	.turquoise-panel {
+		background: rgb(235, 255, 255);
+	}
+
+	.title {
+		text-align: center;
+		font-size: 10rem;
+		font-weight: bold;
+		font-family: 'Inspiration', cursive;
+	}
+
+	.subtitle {
+		margin-top: 50px;
+		font-size: 12rem;
+		font-weight: bold;
+		text-align: center;
+		font-family: 'Inspiration', cursive;
+	}
+
+	caption {
+		text-align: center;
+	}
+
+	table {
+		width: 80%;
+		margin: 0 auto;
+		margin-bottom: 70px;
+		text-align: center;
+		background: rgba( 255, 255, 255, 0.1);
+	}
+
+	.image {
+		width: 100px;
+		height: 60px;
+	}
+
+	.options:hover {
+		cursor: pointer;
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	}
+
+	.caption-text {
+		font-size: 2rem;
+		font-family: 'Caveat', cursive;
+	}
+
+	.th-text {
+		font-size: 4rem;
+		font-family: 'Handlee', cursive;
+	}
+
+	.td-text {
+		font-size: 2rem;
+		font-family: 'Mali', cursive;
+	}
+
+	.input {
+		text-align: center;
+		font-weight: bold;
+		font-family: 'Mali', cursive;
+	}
+
+	.label {
+		margin-bottom: 100px;
+		font-size: 20px;
+		font-family: 'Mali', cursive;
+	}
+
+	@media (max-width: 575.98px) {
+		.title {
+			font-size: 3.8rem;
+		}
+		.input {
+			font-size: 1.3rem;
+		}
+		.label {
+			margin-bottom: 0px;
+			font-size: 0.5rem;
+		}
+		.subtitle {
+			font-size: 6rem;
+		}
+		.th-text {
+			font-size: 1.5rem;
+		}
+		.td-text {
+			font-size: 0.8rem;
+		}
+	}
+
+	@media (min-width: 576px) and (max-width: 767.98px) {
+		.title {
+			font-size: 5.5rem;
+		}
+		.input {
+			font-size: 1.5rem;
+		}
+		.label {
+			margin-bottom: 20px;
+			font-size: 0.8rem;
+		}
+		.subtitle {
+			font-size: 8rem;
+		}
+		.th-text {
+			font-size: 2.3rem;
+		}
+		.td-text {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		.title {
+			font-size: 7.3rem;
+		}
+		.input {
+			font-size: 2rem;
+		}
+		.label {
+			margin-bottom: 35px;
+			font-size: 1rem;
+		}
+		.subtitle {
+			font-size: 10rem;
+		}
+		.th-text {
+			font-size: 3.5rem;
+		}
+		.td-text {
+			font-size: 2rem;
+		}
+	}
+
+</style>
